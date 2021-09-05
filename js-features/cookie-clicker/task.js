@@ -1,4 +1,6 @@
 const cookie = document.getElementById("cookie");
-cookie.onclick = function {
-    let counter = document.querySelector('clicker__counter').innerHTML
-}
+let counter = +document.querySelector('#clicker__counter').innerHTML;
+cookie.onclick = function() {
+    counter += 1;
+    document.querySelector('#clicker__counter').innerHTML = counter;
+};
