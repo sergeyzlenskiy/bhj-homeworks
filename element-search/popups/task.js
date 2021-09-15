@@ -1,20 +1,17 @@
-let showFirst = document.getElementById('modal_main');
-// console.log(show);
+let showFirst = document.querySelector('#modal_main');
 showFirst.classList.add("modal_active");
 
-document.querySelector('.modal__close').onclick = function() {
-    document.querySelector('.modal__content').style.display = "none";
-    document.querySelector('.modal').style.background = "rgba(0, 0 , 0, 0)";
+document.querySelectorAll('div.modal__close')[0].onclick = function() {
+    showFirst.className = "modal";
+    //document.querySelector('.modal').style.background = "rgba(0, 0 , 0, 0)";
 };
 
-console.log(document.getElementsByClassName('show-success'));
+document.querySelector('.show-success').onclick = function() {
+    showFirst.className = "modal";
+    document.querySelector('#modal_success').classList.add('modal_active');
+};
 
-
-let itemSuccess = document.getElementsByClassName('show-success');
-[].forEach.call(itemSuccess, function(elem) {
-    elem.addEventListener('click', function(e) {
-        document.getElementById("modal_success").classList.add("modal_active");
-    }, false);
-  });
-
-  
+document.querySelectorAll('div.modal__close')[1].onclick = function() {
+    document.querySelector('#modal_success').className = 'modal';
+    showFirst.className = 'modal';
+};
